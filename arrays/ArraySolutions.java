@@ -1,0 +1,80 @@
+import java.util.Arrays;
+
+public class ArraySolutions {
+    
+    // Problem: Single Number
+    // Find the single number that appears only once in an array where every other element appears twice
+    public int singleNumber(int[] nums) {
+        int result = 0;
+        for (int num : nums) {
+            result ^= num;
+        }
+        return result;
+    }
+    
+    // Problem: Height Checker
+    // Return the number of indices where heights[i] != expected[i] after sorting
+    public int heightChecker(int[] heights) {
+        int[] expected = heights.clone();
+        Arrays.sort(expected);
+        int result = 0;
+        for (int i = 0; i < heights.length; i++) {
+            if (heights[i] != expected[i]) {
+                result++;
+            }
+        }
+        return result;
+    }
+    
+    // Problem: How Many Numbers Are Smaller Than the Current Number
+    // For each number, count how many numbers in the array are smaller than it
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        int[] result = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            int cnt = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[j] < nums[i]) {
+                    cnt++;
+                }
+            }
+            result[i] = cnt;
+        }
+        return result;
+    }
+    
+    // Problem: Concatenation of Array
+    // Return an array formed by concatenating the array with itself
+    public int[] getConcatenation(int[] nums) {
+        int[] result = new int[nums.length * 2];
+        for (int i = 0; i < nums.length; i++) {
+            result[i] = nums[i];
+        }
+        for (int i = nums.length; i < result.length; i++) {
+            result[i] = nums[i - nums.length];
+        }
+        return result;
+    }
+    
+    // Problem: Squares of a Sorted Array
+    // Return an array of the squares of each number sorted in non-decreasing order
+    public int[] sortedSquares(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = nums[i] * nums[i];
+        }
+        return Arrays.stream(nums).sorted().toArray();
+    }
+    
+    // Problem: Final Value of Variable After Performing Operations
+    // Start with X = 0, perform operations (++X, X++, --X, X--) and return final value
+    public int finalValueAfterOperations(String[] operations) {
+        int result = 0;
+        for (int i = 0; i < operations.length; i++) {
+            if (operations[i].equals("X++") || operations[i].equals("++X")) {
+                result++;
+            } else {
+                result--;
+            }
+        }
+        return result;
+    }
+}
