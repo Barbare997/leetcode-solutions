@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MathSolutions {
     //Number of Steps to Reduce a Number to Zero
 public int numberOfSteps(int num) {
@@ -12,11 +15,33 @@ public int numberOfSteps(int num) {
         return result;
 }
 
-   //Fibonacci Number
+//Fibonacci Number
 public int fib(int n) {
     if (n==0) return 0;
     if (n==1) return 1;
     return fib(n-1) + fib(n-2);
 }
 
+    // Self Dividing Numbers
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> result = new ArrayList<>();
+        for (int i =left; i<=right; i++) {
+            if (isSelfDividing(i)) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
+
+    private boolean isSelfDividing(int num) {
+    int original = num;
+    while (num > 0) {
+        int digit = num % 10;
+        if (digit == 0 || original % digit != 0) {
+            return false;
+        }
+        num /= 10;
+    }
+        return true;
+    }
 }
