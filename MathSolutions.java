@@ -44,4 +44,9 @@ public int fib(int n) {
     }
         return true;
     }
+
+    // Calculate Delayed Arrival Time
+    public int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
+        return (arrivalTime + delayedTime) % 24;
+    }
 }
