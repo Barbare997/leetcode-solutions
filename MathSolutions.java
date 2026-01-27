@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MathSolutions {
@@ -48,5 +49,15 @@ public int fib(int n) {
     // Calculate Delayed Arrival Time
     public int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
         return (arrivalTime + delayedTime) % 24;
+    }
+
+    //Missing Number
+    public int missingNumber(int[] nums) {
+        Arrays.sort(nums);
+        for (int i=0; i<nums.length; i++) {
+            if (nums[i]!=i)
+              return i;
+    }   
+    return nums.length;
     }
 }
