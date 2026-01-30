@@ -86,5 +86,14 @@ public int fib(int n) {
         return result;
     }
 
-    
+    // Count Partitions with Even Sum Difference
+    // Count how many ways to split array so that (leftSum - rightSum) is even
+    public int countPartitions(int[] nums) {
+        int total = 0;
+        for (int num : nums) total += num;
+        if (nums.length < 2) return 0;
+        // leftSum - rightSum = 2*leftSum - total; even when total is even
+        return total % 2 == 0 ? nums.length - 1 : 0;
+    }
+
 }
