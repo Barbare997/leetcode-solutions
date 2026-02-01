@@ -77,4 +77,22 @@ public class ArraySolutions {
         }
         return result;
     }
+
+    // Shortest Distance to a Character
+    // answer[i] = distance from index i to the closest occurrence of c in s
+    public int[] shortestToChar(String s, char c) {
+        int n = s.length();
+        int[] result = new int[n];
+        int lastPos = -n;
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == c) lastPos = i;
+            result[i] = i - lastPos;
+        }
+        int nextPos = 2 * n;
+        for (int i = n - 1; i >= 0; i--) {
+            if (s.charAt(i) == c) nextPos = i;
+            result[i] = Math.min(result[i], nextPos - i);
+        }
+        return result;
+    }
 }
