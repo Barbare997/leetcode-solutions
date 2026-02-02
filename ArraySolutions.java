@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class ArraySolutions {
-    
+
     // Problem: Single Number
     // Find the single number that appears only once in an array where every other element appears twice
     public int singleNumber(int[] nums) {
@@ -11,7 +11,7 @@ public class ArraySolutions {
         }
         return result;
     }
-    
+
     // Problem: Height Checker
     // Return the number of indices where heights[i] != expected[i] after sorting
     public int heightChecker(int[] heights) {
@@ -25,7 +25,7 @@ public class ArraySolutions {
         }
         return result;
     }
-    
+
     // Problem: How Many Numbers Are Smaller Than the Current Number
     // For each number, count how many numbers in the array are smaller than it
     public int[] smallerNumbersThanCurrent(int[] nums) {
@@ -41,7 +41,7 @@ public class ArraySolutions {
         }
         return result;
     }
-    
+
     // Problem: Concatenation of Array
     // Return an array formed by concatenating the array with itself
     public int[] getConcatenation(int[] nums) {
@@ -54,7 +54,7 @@ public class ArraySolutions {
         }
         return result;
     }
-    
+
     // Problem: Squares of a Sorted Array
     // Return an array of the squares of each number sorted in non-decreasing order
     public int[] sortedSquares(int[] nums) {
@@ -63,7 +63,7 @@ public class ArraySolutions {
         }
         return Arrays.stream(nums).sorted().toArray();
     }
-    
+
     // Problem: Final Value of Variable After Performing Operations
     // Start with X = 0, perform operations (++X, X++, --X, X--) and return final value
     public int finalValueAfterOperations(String[] operations) {

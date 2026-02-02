@@ -57,7 +57,7 @@ public int fib(int n) {
         for (int i=0; i<nums.length; i++) {
             if (nums[i]!=i)
               return i;
-    }   
+    }
     return nums.length;
     }
 
@@ -113,6 +113,6 @@ public int fib(int n) {
             n /= 10;
         }
         return sum;
-    }   
+    }
 
 }
