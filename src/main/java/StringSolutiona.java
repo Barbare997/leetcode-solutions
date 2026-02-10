@@ -98,5 +98,22 @@ public class StringSolutiona {
         return result;
     }
 
+    //Truncate Sentence
+    public String truncateSentence(String s, int k) {
+        int cnt = 0;
+        StringBuilder res = new StringBuilder();
+        for (int i=0; i<s.length(); i++) {
+            if (s.charAt(i)==' ')
+                cnt++;
+
+            if (cnt==k)
+                break;
+            else
+                res.append(s.charAt(i));
+
+        }
+        return res.toString();
+    }
+
 
 }
